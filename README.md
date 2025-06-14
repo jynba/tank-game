@@ -1,4 +1,4 @@
-# slackingOffGame
+# tank-game
 
 自制基于 websocket 的局域网联机坦克大战游戏
 
