@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tank Battle</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #1a1a1a;
+      }
+      canvas {
+        border: 2px solid #333;
+        background: #000;
+      }
+      #scoreBoard {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scoreBoard">等待对手加入...</div>
+    <canvas id="gameCanvas" width="1000" height="800"></canvas>
+
+    <!-- 基础工具类 -->
+    <script src="canvasItem/physics.js"></script>
+    <script src="canvasItem/particles.js"></script>
+
+    <!-- 游戏核心组件 -->
+    <script src="canvasItem/socket.js"></script>
+    <script src="canvasItem/player.js"></script>
+    <script src="canvasItem/game.js"></script>
+
+    <script>
+      // 等待所有资源加载完成
+      window.addEventListener('load', () => {
+        const canvas = document.getElementById('gameCanvas');
+        const game = new Game(canvas);
+      });
+    </script>
+  </body>
+</html>
